@@ -27,7 +27,7 @@ def menuItemJSON(restaurant_id, menu_id):
     return jsonify(MenuItem=menuItem.serialize)    
 
 
-# website templates
+# website routing to templates
 
 @app.route('/')
 @app.route('/restaurants/<int:restaurant_id>/menu')
