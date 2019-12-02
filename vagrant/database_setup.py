@@ -19,6 +19,14 @@ class Restaurant(Base):
 
 	name = Column(String(250), nullable = False)
 
+	@property
+	def serialize(self):
+		"""Return object data in easily serializeable format"""
+		return {
+		'name': self.name,
+		'id': self.id,
+		}
+
 
 class MenuItem(Base):
 	__tablename__ = 'menu_item'
@@ -39,15 +47,16 @@ class MenuItem(Base):
 	restaurant = relationship(Restaurant)
 
 # decorator to send JSON objects in a serializable format
-	# @property
-	# def serialize(self):
-	# 	return {
-	# 		'name' : self.name,
-	# 		'description' : self.description, 
-	# 		'id' : self.id, 
-	# 		'price' : self.price,
-	# 		'course' : self.course,
-	# 		}
+	@property
+	def serialize(self):
+		"""Return object data in easily serializeable format"""
+		return {
+		'name': self.name,
+		'description': self.description,
+		'id': self.id,
+		'price': self.price,
+		'course': self.course,
+		}
 
 ### begin footer
 
