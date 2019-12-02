@@ -38,6 +38,16 @@ class MenuItem(Base):
 
 	restaurant = relationship(Restaurant)
 
+# decorator to send JSON objects in a serializable format
+	# @property
+	# def serialize(self):
+	# 	return {
+	# 		'name' : self.name,
+	# 		'description' : self.description, 
+	# 		'id' : self.id, 
+	# 		'price' : self.price,
+	# 		'course' : self.course,
+	# 		}
 
 ### begin footer
 
